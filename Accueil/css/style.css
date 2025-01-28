@@ -1,0 +1,237 @@
+/*
+SAE WEB
+GROUPE 1 : BOSSUS Quentin LAURENCE Maxence BOUDABHA Ayyoub
+CSS pour page d'accueil
+*/
+
+
+body {
+    height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    position: relative;
+    margin: 0;
+    padding: 0;
+
+/*-----------------------CARROUSEL-----------------------*/
+
+    background-position: top center;
+    background-size: cover;
+    animation: backgroundCycle 40s infinite;
+    animation-duration: 15s;
+    background-repeat: no-repeat;
+    background-size: 100% 100vh;
+}
+
+
+/*-----------------------MENU-----------------------*/
+
+
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.nav, .langue, .page_actuelle {
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 30px;
+    text-align: center;
+    margin-top: 25px;
+    text-decoration: none;
+    color: #000000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.nav, .page_actuelle {
+    width: 200px;
+}
+
+.page_actuelle {
+    font-weight: bold;
+}
+
+.langue {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.nav:hover, .langue:hover, .langue img:hover, .page_actuelle:hover {
+    transform: scale(1.2);                                /*aggrandis les boutons à 20%*/
+    transition: transform 0.3s ease;                      /*Effectue une transition pour l'aggrandissement*/
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5);          /*Ajoute de l'ombre aux boutons*/
+}
+
+
+/*-----------------------ARTICLE-----------------------*/
+
+
+.article {
+    position: static;
+    margin-top: 100vh;
+}
+
+.ouverture {
+    font-weight: normal;
+    font-size: 140%;
+    width: 700px;
+    text-decoration: underline;
+    margin: auto;
+    margin-bottom: 50px;
+    padding: 10px;
+    text-align: center;
+} 
+
+.titre {
+    font-weight: normal; 
+    font-size: 120%;
+    width: 300px;
+    margin: auto;
+    margin-bottom: 50px;
+    padding: 10px;
+    background-color: #d9d9d9;
+    border-radius: 30px;
+    text-align: center;
+}
+
+.diff, .bloc, .vit {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.text {
+    width: 600px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+
+/*-----------------------FOOTER-----------------------*/
+
+
+footer {
+    width: 100%;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    background-color: #000000;
+}
+
+.footertext {
+    font-size: 16px;
+    color: #ffffff;
+    text-decoration: underline;
+    margin-left: 100px;
+}
+
+
+/* -----------------------IMAGES----------------------- */
+
+
+.logo {
+    width: 150px;
+    height: 150px;
+    float: left;
+    border-radius: 30px;
+}
+
+.langue img {
+    width: 20px;
+    height: 20px;
+}
+
+.img_diff, .img_bloc, .img_vit, .img_bloc_phone {
+    width: 600px;
+    margin-bottom: 50px;
+}
+
+.img_diff, .img_vit {
+    float: left;
+    margin-left: 50px;
+}
+
+.img_bloc, .img_bloc_phone {
+    float: right;
+    margin-right: 50px;
+}
+
+.img_bloc_phone {
+    display: none;
+}
+
+
+/*-----------------------ANIMATION CARROUSEL-----------------------*/
+
+
+@keyframes backgroundCycle {
+    0% {
+        background-image: url('../../img/carrousel1.png');
+    }
+    25% {
+        background-image: url('../../img/carrousel2.png');
+    }
+    50% {
+        background-image: url('../../img/carrousel3.png');
+    }
+    75% {
+        background-image: url('../../img/carrousel4.jpg');
+    }
+    100% {
+        background-image: url('../../img/carrousel1.png')
+    }
+}
+
+/*Rendre le contenu visible au dessus du Carrousel*/
+.header, .menu {
+    position: relative;
+    z-index: 2;
+}
+
+
+@media only screen
+and (max-device-width : 390px)
+and (orientation : portrait) {
+    body {
+        background-size: 100% 50vh;
+    }
+
+    .article {
+        margin-top: 50vh;
+        text-align: justify;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .titre {
+        width: 500px;
+    }
+
+    .text {
+        width: 340px;
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+
+    .diff, .bloc, .vit {
+        display: block;
+    }
+
+    .img_diff, .img_vit, .img_bloc_phone {
+        width: 300px;
+        height: 300px;
+        margin-bottom: 25px;
+        float: none;
+        margin-left: 50px;
+        margin-right: 0px;
+    }
+
+    .img_bloc {
+        display: none;
+    }
+
+    .img_bloc_phone {
+        display: block;
+    }
+}
