@@ -1,0 +1,284 @@
+/*
+SAE WEB : Jeux Olympiques Escalade
+GROUPE 1 : BOSSUS Quentin LAURENCE Maxence BOUDABHA Ayyoub
+CSS BASE
+*/
+
+
+body {
+    height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    position: relative;
+    margin: 0;
+    padding: 0;
+
+/*-----------------------CARROUSEL-----------------------*/
+
+    background-position: top center;
+    background-size: cover;                     
+    animation: backgroundCycle 30s infinite;    /*répète en boucle une animation "backgroundCycle" de 30sec*/
+    animation-duration: 15s;
+    background-repeat: no-repeat;
+    background-size: 100% 100vh;                /*rempli la longueur et prend la taille de l'écran*/
+}
+
+
+/*-----------------------MENU-----------------------*/
+/*Note : "page_actuelle" c'est la page où on se situe, qui doit être en gras. 
+NE PAS OUBLIER DE METTRE CETTE CLASSE EN HTML*/
+
+
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.nav, .langue, .page_actuelle {
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 30px;
+    text-align: center;
+    margin-top: 25px;
+    text-decoration: none;
+    color: #000000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.nav, .page_actuelle {
+    width: 200px;
+}
+
+.page_actuelle {
+    font-weight: bold;
+}
+
+.langue {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.nav:hover, .langue:hover, .langue img:hover, .page_actuelle:hover {
+    transform: scale(1.2);                                /*aggrandis les boutons à 20%*/
+    transition: transform 0.3s ease;                      /*Effectue une transition pour l'aggrandissement*/
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5);          /*Ajoute de l'ombre aux boutons*/
+}
+
+
+/*-----------------------ARTICLE-----------------------*/
+/*note : Le haut de l'article se positionne en bas de la taille d'écran*/
+
+.article {
+    position: static;
+    margin-top: 100vh;             /*se positionne en dessous de la taille de l'écran*/
+    margin-left: 50px; 
+    margin-right: 50px;
+}
+
+.ouverture {
+    font-weight: normal;
+    font-size: 140%;
+    width: 700px;
+    text-decoration: underline;
+    margin: auto;
+    margin-bottom: 50px;
+    padding: 10px;
+    text-align: center;
+} 
+
+.titre {
+    font-weight: normal; 
+    font-size: 120%;
+    width: 300px;
+    margin: auto;
+    margin-bottom: 50px;
+    padding: 10px;
+    background-color: #d9d9d9;
+    border-radius: 30px;
+    text-align: center;
+}
+
+
+#combine_homme, #combine_femme {
+    margin-left: 40vh; 
+}
+
+#vitesse_homme, #vitesse_femme {
+    margin-right: 40vh; 
+}
+
+#combine_homme, #combine_femme, #vitesse_homme, #vitesse_femme { 
+    text-decoration: none; 
+    color: #000000;
+    width: 300px; 
+    height: 70px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+}
+
+#choix_resultats { /* pour que les 4 bouton sois afficher correctement */
+    display: flex; /* utilisaiton de flexbox */
+    flex-wrap: wrap; 
+} 
+
+#combine_homme:hover, #vitesse_homme:hover, #combine_femme:hover, #vitesse_femme:hover{
+    transform: scale(1.2);                                /*aggrandis les boutons à 20%*/
+    transition: transform 0.3s ease;                      /*Effectue une transition pour l'aggrandissement*/
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5);          /*Ajoute de l'ombre aux boutons*/
+}
+
+#resultats_combine_homme, #resultats_vitesse_homme, #resultats_combine_femme, #resultats_vitesse_femme {
+    margin-top: 200px; 
+}
+
+
+.h3_resultats {
+    position: relative; 
+    left: -50px; 
+    padding-left: 50px; 
+    width: calc(100vw - 50px);    /* permet de mettre l'élément en relative (donc respet du flow mais déplacable) et que le background fasse toute la largeur de l'écrant */
+
+    background-color: #d9d9d9; 
+    text-decoration: none;
+    padding-top: 10px; 
+    padding-bottom: 10px;
+    font-size: 160%;
+}
+
+.h4_resultats {
+    position: relative; 
+    left: -50px;  
+    padding-left: 50px; 
+    width: calc(100vw - 50px); 
+
+    background-color: #d9d9d9; 
+    text-decoration: none;
+    padding-top: 10px; 
+    padding-bottom: 10px; 
+    font-size: 110%;
+}
+
+.tableau_resultats {
+    margin: 0 auto; /* permet de centrer */
+    margin-top: 100px; 
+}
+
+.tableau_resultats, tr, th {
+    font-weight: normal; 
+    border-collapse: collapse;
+}
+
+td {
+    border: 2px solid black; 
+    padding: 15px; 
+} 
+
+
+tr:nth-child(even) { /* permet d'agir uniquement sur les ligne paires (donc 1 ligne sur 2) */
+    background-color: #d9d9d9; 
+}
+
+thead {
+    background-color: #a0a0a0; 
+}
+
+#dernier_element {
+    margin-bottom: 100px;
+}
+
+.retour_titre {
+    position: fixed; 
+    bottom: 20px; 
+    right: 20px; 
+    padding: 15px; 
+    color: white;
+    background-color: rgb(39, 39, 39); 
+    text-decoration: none;
+    border-radius: 30px;
+    z-index: 10;
+}
+
+.retour_titre:hover{
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5);
+}
+
+
+/*-----------------------FOOTER-----------------------*/
+
+
+footer {
+    width: 100%;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    background-color: #000000;
+}
+
+.footertext {
+    font-size: 16px;
+    color: #ffffff;
+    text-decoration: underline;
+    padding-left: 50px;
+}
+
+
+/* -----------------------IMAGES----------------------- */
+
+
+.logo {
+    width: 150px;
+    height: 150px;
+    float: left;
+    border-radius: 30px;
+}
+
+.langue img {
+    width: 20px;
+    height: 20px;
+}
+
+
+/*-----------------------ANIMATION CARROUSEL-----------------------*/
+
+
+@keyframes backgroundCycle {
+    0% {
+        background-image: url('../../img/carrousel1.png');     /* À 0% du cycle, l'image de fond est définie sur "carrousel1.png"*/
+    }
+    25% {
+        background-image: url('../../img/carrousel2.png');     /* À 25% du cycle, l'image de fond est définie sur "carrousel2.png"*/
+    }
+    50% {
+        background-image: url('../../img/carrousel3.png');     /* À 50% du cycle, l'image de fond est définie sur "carrousel3.png"*/
+    }
+    75% {
+        background-image: url('../../img/carrousel4.jpg');     /* À 75% du cycle, l'image de fond est définie sur "carrousel1.png"*/
+    }
+
+    100% {
+        background-image: url('../../img/carrousel1.png');     /* À 100% du cycle, l'image de fond est définie sur "carrousel1.png"*/
+    }
+}
+
+/* Rendre le contenu visible au dessus du Carrousel */
+.header, .menu {
+    position: relative;
+    z-index: 2;
+} 
+
+
+@media only screen
+and (max-device-width : 390px)
+and (orientation : portrait) {
+    body {
+        background-size: 100% 50vh;
+    }
+
+    .article {
+        margin-top: 50vh;
+    }
+}
